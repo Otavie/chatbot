@@ -17,7 +17,7 @@
         "content_set": ""
     },
     {"tag": "wellBeing",
-        "patterns": ["How are you", "how are u", "how you", "hw are you", "how u", "hw are u", "how is it", "how are you doing", "how are you doing today", "how are u doing", "how are u doing today", "how are you", "how are yu"],
+        "patterns": ["How are you", "how are u", "how are ya", "how you", "hw are you", "how u", "hw are u", "how is it", "how are you doing", "how are you doing today", "how are u doing", "how are u doing today", "how are you", "how are yu"],
         "responses": ["I'm awesome! Doing great!", "I am fine. Thank you!", "Very well - by God's grace"],
         "content_set": ""
     },
@@ -88,9 +88,15 @@
             "My hobbies include jogging, reading, listening to musics/audiobooks and playing games - tennis, table tennis, etc."],
         "content_set": ""
     },
-    {"tag": "doYouProgram",
-        "patterns": ["do you program", "are you are programmer", "do u program", "are you good at programming"],
+    {"tag": "yesQuestion",
+        "patterns": ["do you program", "are you are programmer", "do you know how to program", "do u program", "are you good at programming", "u have a hobby", "do you have hobbies", "do you have things you do when you are free", "do u have things u do when u are free", "in python", "in R", "in JavaScript",
+        "what about python", "what about R, HTML, JavaScript, CSS", "hope you are fine", "hope u are good", "hope u are doing great", "i believe u are fine"],
         "responses": ["Yes"],
+        "content_set": ""
+    },
+    {"tag": "noQuestion",
+        "patterns": ["do you program in C++", "do you program in C##, Java C, Vue, Rubby", "what about C++", "what about Java, C, C##, Rubby"],
+        "responses": ["No!"],
         "content_set": ""
     },
     {"tag": "thankYou",

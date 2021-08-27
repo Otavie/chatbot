@@ -14,14 +14,14 @@ with open("chatbot1Intents.json") as file:
 
 wordList = []
 labelList = []
-wordTokens = []
+wordTokenList = []
 intentList = []
 
 for intent in data["intents"]:
     for pattern in intent["patterns"]:
         words = nltk.word_tokenize(pattern)
         wordList.extend(words)
-        wordTokens.append(words)
+        wordTokenList.append(words)
         intentList.append(intent["tag"])
 
     if intent["tag"] not in labelList:
@@ -34,57 +34,58 @@ labelList = sorted(labelList)
 
 #print(labelList)
 
-training = []
-output = []
+trainingList = []
+outputList = []
 
 outputEmpty = [0 for _ in range(len(labelList))]
 
-for count, label in enumerate(wordTokens):
-    bag = []
+for count, wordToken in enumerate(wordTokenList):
+    bagList = []
 
-    words = [stemmer.stem(w.lower()) for w in label]
+    words = [stemmer.stem(thisWord.lower()) for thisWord in wordToken]
 
-    for w in wordList:
-        if w in words:
-            bag.append(1)
+    for thisWord in wordList:
+        if thisWord in words:
+            bagList.append(1)
         else:
-            bag.append(0)
+            bagList.append(0)
 
         
     outputRow = outputEmpty[:]
     outputRow[labelList.index(intentList[count])] = 1
 
-    training.append(bag)
-    output.append(outputRow)
+    trainingList.append(bagList)
+    outputList.append(outputRow)
 
-training = np.array(training)
-output = np.array(output)
+trainingList = np.array(trainingList)
+outputList = np.array(outputList)
 
 tf.compat.v1.get_default_graph()
 
-net = tfl.input_data(shape=[None, len(training[0])])
+net = tfl.input_data(shape=[None, len(trainingList[0])])
 net = tfl.fully_connected(net, 8)
 net = tfl.fully_connected(net, 8)
-net = tfl.fully_connected(net, len(output[0]), activation="softmax")
+net = tfl.fully_connected(net, len(outputList[0]), activation="softmax")
 net = tfl.regression(net)
 
 model = tfl.DNN(net)
 
 model.save("model.tflearn")
-model.fit(training, output, n_epoch=1000, batch_size=10, show_metric=True)
+model.fit(trainingList, outputList, n_epoch=1000, batch_size=10, show_metric=True)
 
-def BagOfWords(s, wordList):
-    bag = [0 for _ in range(len(wordList))]
 
-    s_words = nltk.word_tokenize(s)
-    s_words = [stemmer.stem(word.lower()) for word in s_words]
+def BagOfWords(userSentence, wordList):
+    bagList = [0 for _ in range(len(wordList))]
 
-    for se in s_words:
-        for i, w in enumerate(wordList):
-            if w == se:
-                bag[i] = 1
+    sentTokenList = nltk.word_tokenize(userSentence)
+    sentTokenList = [stemmer.stem(word.lower()) for word in sentTokenList]
+
+    for sentToken in sentTokenList:
+        for ind, w in enumerate(wordList):
+            if w == sentToken:
+                bagList[ind] = 1
             
-    return np.array(bag)
+    return np.array(bagList)
 
 def chat():
     print("Start talking with the bot (type quit to stop)!")
@@ -99,9 +100,9 @@ def chat():
         tag = labelList[resultsIndex]
 
         if results[resultsIndex] > 0.3:
-            for tg in data["intents"]:
-                if tg['tag'] == tag:
-                    responses = tg['responses']
+            for thisTag in data["intents"]:
+                if thisTag['tag'] == tag:
+                    responses = thisTag['responses']
             print(random.choice(responses))
         else:
             print("I do not understand you. Say something else!")
