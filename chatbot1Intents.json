@@ -1,105 +1,125 @@
-{"intents":[
-
-    {"tag": "name",
+{
+    "intents":[
+    {
+        "tag": "name",
         "patterns": ["what is your name", "what's your full name", "what should I call you", "what's your name", "whats your name", "your name", "what ya name"],
         "responses": ["My name is Okuoyo, Otavie", "Otavie Okuoyo", "I am Otavie Okuoyo", "My name is Otavie Okuoyo"],
         "content_set": ""
     },
-    {"tag": "know me",
+    {
+        "tag": "know me",
         "patterns": ["who are you", "tell me about you", "what do you do", "briefly tell me about you", "tell me about u", "briefly tell me about u", "who are u", "what do u do"],
         "responses": ["My name is Otavie Okuoyo, and right now I am a Research student at Covenant University, Nigeria. Otavie is a programming and a web developer.",
-        "My name is Okuoyo, Otavie. I am a Programmer/Web Developer. I am an MSc student and a researcher at Covenant University, Nigeria."],
+                      "My name is Okuoyo, Otavie. I am a Programmer/Web Developer. I am an MSc student and a researcher at Covenant University, Nigeria."],
         "content_set": ""
     },
-    {"tag": "greeting",
+    {
+        "tag": "greeting",
         "patterns": ["Hi", "helllo", "hiiiiii", "hiii", "hola", "holla", "holllla", "Is anyone here?", "Hello", "Wad up", "Good day", "Whatsup", "Whats up"],
         "responses": ["Hello", "Hello, welcome to my page!", "Hi, welcome to Otavie's website", "Hi"],
         "content_set": ""
     },
-    {"tag": "wellBeing",
+    {
+        "tag": "wellBeing",
         "patterns": ["How are you", "how are u", "how are ya", "how you", "hw are you", "how u", "hw are u", "how is it", "how are you doing", "how are you doing today", "how are u doing", "how are u doing today", "how are you", "how are yu"],
         "responses": ["I'm awesome! Doing great!", "I am fine. Thank you!", "Very well - by God's grace"],
         "content_set": ""
     },
-    {"tag": "wellBeingTwo",
+    {
+        "tag": "wellBeingTwo",
         "patterns": ["How is it going", "how is everything"],
         "responses": ["Everything is great!", "Everything is fine. Thank you!", "Very well - by God's grace"],
         "content_set": ""
     },
-    {"tag": "familyQuestion",
+    {
+        "tag": "familyQuestion",
         "patterns": ["How is the family", "how is your wife and children", "how is your wife", "how are the children", "wife", "children"],
         "responses": ["Please, do not ask about family, wife or children"],
         "content_set": ""
     },
-    {"tag": "marriage",
+    {
+        "tag": "marriage",
         "patterns": ["married", "are you married", "you have a wife", "you have a child", "you have children", "u have a wife", "u have children", "u have a child"],
         "responses": ["No!"],
         "content_set": ""
     },
-    {"tag": "okay",
+    {
+        "tag": "okay",
         "patterns": ["okay"],
         "responses": ["Okay!"],
         "content_set": ""
     },
-    {"tag": "location",
+    {
+        "tag": "location",
         "patterns": ["where are u", "where are u now", "where are you now", "where are you now"],
         "responses": ["I'm in front of you but my physical location right now cannot be disclosed ):"],
         "content_set": ""
     },
-    {"tag": "goodbye",
+    {
+        "tag": "goodbye",
         "patterns": ["cya", "See you later", "Goodbye", "I am leaving", "Have a good day"],
         "responses": ["Sad to see you go :(", "Talk to you later", "Goodbye"],
         "content_set": ""
     },
-    {"tag": "age",
+    {
+        "tag": "age",
         "patterns": ["How old", "how old are you", "how old is Otavie", "how old is Otavie Okuoyo", "how old is Okuoyo", "your age?", "age"],
         "responses": ["I am 33 years old", "33 years old!", "33 years"],
         "content_set": ""
     },
-    {"tag": "skills",
+    {
+        "tag": "skills",
         "patterns": ["what are you good at", "what are your skills", "tell me about your skill", "what are your skill"],
         "responses": ["I am very good at with HTML and CSS. I am also good with JavaScript and its libraries/frameworks like JQuery. I can perform Data Analysis with Python and R",
         "I perform Data Analysis with R and Python. I am a Web Developer - good with HTML, CSS and JavaScript."],
         "content_set": ""
     },
-    {"tag": "programmingSkills",
+    {
+        "tag": "programmingSkills",
         "patterns": ["Tell me about your programming skills", "What about your programming skills", "your programming skills", "programming skills", "what programming languages are you good with?"],
         "responses": ["I am good with Python and R."],
         "content_set": ""
     },
-    {"tag": "webDesignSkills",
+    {
+        "tag": "webDesignSkills",
         "patterns": ["Tell me about your web design skills", "What about your web development skills", "your web skills", "your web dev skills", "tell me about your web development skills"],
         "responses": ["I am good with Python and R."],
         "content_set": ""
     },
-    {"tag": "activityNow",
+    {
+        "tag": "activityNow",
         "patterns": ["Tell me what you are doing now", "What about your web development skills", "your web skills", "your web dev skills", "tell me about your web development skills"],
         "responses": ["Right now, I am in school, doing my MSc Program in Software Engineering at Covenant University!"],
         "content_set": ""
     },
-    {"tag": "covenantUniversity",
+    {
+        "tag": "covenantUniversity",
         "patterns": ["Tell me about your web design skills"],
         "responses": ["Covenant University is awesome. However, you can visit the website for more - http://covenantuniversity.edu.ng/"],
         "content_set": ""
     },
-    {"tag": "hobbies",
+    {
+        "tag": "hobbies",
         "patterns": ["tell me about your hobbies", "what ar your hobbies", "tell us about your hobbies"],
         "responses": ["I enjoy spending my free time jogging, reading, listening to musics/audiobooks and playing games - tennis, table tennis, etc.", 
             "My hobbies include jogging, reading, listening to musics/audiobooks and playing games - tennis, table tennis, etc."],
         "content_set": ""
     },
-    {"tag": "yesQuestion",
+    {
+        "tag": "yesQuestion",
         "patterns": ["do you program", "are you are programmer", "do you know how to program", "do u program", "are you good at programming", "u have a hobby", "do you have hobbies", "do you have things you do when you are free", "do u have things u do when u are free", "in python", "in R", "in JavaScript",
         "what about python", "what about R, HTML, JavaScript, CSS", "hope you are fine", "hope u are good", "hope u are doing great", "i believe u are fine"],
         "responses": ["Yes"],
         "content_set": ""
     },
-    {"tag": "noQuestion",
+    {
+        "tag": "noQuestion",
         "patterns": ["do you program in C++", "do you program in C##, Java C, Vue, Rubby", "what about C++", "what about Java, C, C##, Rubby"],
         "responses": ["No!"],
         "content_set": ""
     },
-    {"tag": "thankYou",
+    {
+        "tag": "thankYou",
         "patterns": ["thank you", "thank u", "thanks", "thanks for your feedback", "thanks for ur feedback", "thank you for your time", "thank u for ur time"],
         "responses": ["You are welcome!"],
         "content_set": ""
