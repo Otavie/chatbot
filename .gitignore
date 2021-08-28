@@ -1,7 +1,8 @@
 models/data.pickle
 checkpoint
-data.pickle
-model.tflearn.data-00000-of-00001
-model.tflearn.index
-model.tflearn.meta
+*.pickle
+*.tflearn.data-00000-of-00001
+*.tflearn.index
+*.tflearn.meta
 chatbot/
+__pycache__/
