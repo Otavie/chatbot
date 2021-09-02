@@ -40,6 +40,7 @@ class Training:
             
             self.words = [stemmer.stem(w.lower()) for w in self.words if w != "?"]
             self.words = sorted(list(set(self.words)))
+            self.labels = sorted(self.labels)
 
 
     def generate_words_bag(self):
@@ -47,7 +48,7 @@ class Training:
 
         for x, doc in enumerate(self.word_tokens):
             bag = []
-            wrds = [stemmer.stem(w) for w in doc]
+            wrds = [stemmer.stem(w.lower()) for w in doc]
 
             for w in self.words:
                 if w in wrds:
